@@ -1,8 +1,10 @@
 import json, urllib.request, xml.etree.ElementTree as ET
+import os
 from pathlib import Path
 from datetime import datetime, timezone
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'site/data/content.json'
+if os.getenv('CONTENT_OUTPUT'): OUT=Path(os.environ['CONTENT_OUTPUT'])
 def fetch(url):
     if not url.startswith('https://'): raise ValueError('HTTPS required')
     with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'PersonalListeningReader/1.0'}),timeout=25) as r:
