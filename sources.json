@@ -1,50 +1,67 @@
 {
-  "podcasts": [
+  "followed": [
     {
-      "url": "https://proxy.wavpub.com/caffebreve.xml"
+      "name": "半拿铁 | 商业沉浮录",
+      "url": "https://proxy.wavpub.com/caffebreve.xml",
+      "limit": 20
     }
   ],
-  "cases": {
-    "title": "商业与营销案例",
-    "limit": 24,
-    "summary_chars": 120,
-    "exclude": [
-      "央行",
-      "美股",
-      "盘前",
-      "加息",
-      "通胀",
-      "货币政策",
-      "条例",
-      "交割",
-      "医保",
-      "A股",
-      "港股",
-      "商品期",
-      "普涨",
-      "点1氪",
-      "早知道",
-      "早报",
-      "晚报"
-    ],
-    "sources": [
-      {
-        "name": "36氪",
-        "url": "https://www.36kr.com/feed-article",
-        "enabled": true
-      },
-      {
-        "name": "36氪",
-        "url": "https://www.36kr.com/feed",
-        "enabled": true
-      },
-      {
-        "name": "虎嗅",
-        "url": "https://rss.huxiu.com/",
-        "enabled": true
-      }
-    ]
-  },
+  "marketingAudio": [
+    {
+      "name": "营响·品牌营销随时听",
+      "url": "https://www.ximalaya.com/album/46952585.xml",
+      "limit": 8
+    },
+    {
+      "name": "虎嗅·商业有味道",
+      "url": "https://www.ximalaya.com/album/2823309.xml",
+      "limit": 8
+    },
+    {
+      "name": "MSAI营销科学",
+      "url": "https://www.ximalaya.com/album/83149212.xml",
+      "limit": 8
+    }
+  ],
+  "marketingSpeech": [
+    {
+      "name": "36氪",
+      "url": "https://www.36kr.com/feed-article",
+      "limit": 8
+    },
+    {
+      "name": "虎嗅",
+      "url": "https://rss.huxiu.com/",
+      "limit": 6
+    }
+  ],
+  "unavailable": [
+    {
+      "name": "罗永浩的十字路口",
+      "reason": "公开 RSS 目前返回 403，暂时无法加入。"
+    }
+  ],
+  "summary_chars": 80,
+  "exclude": [
+    "央行",
+    "美股",
+    "盘前",
+    "加息",
+    "通胀",
+    "货币政策",
+    "条例",
+    "交割",
+    "医保",
+    "A股",
+    "港股",
+    "商品期",
+    "普涨",
+    "点1氪",
+    "早知道",
+    "早报",
+    "晚报",
+    "newsflashes"
+  ],
   "keywords": [
     "营销",
     "品牌",
@@ -57,56 +74,16 @@
     "爆款",
     "出海",
     "供应链",
-    "门店",
-    "渠道",
-    "会员",
-    "私域",
-    "投放",
     "财报",
     "外卖",
-    "复购",
-    "加盟",
-    "种草",
-    "代言",
-    "客单",
-    "货架",
     "商业",
-    "销量",
-    "开店",
-    "关店",
-    "直播",
     "战略",
-    "补贴",
-    "折扣",
-    "联名",
-    "带货",
-    "涨价",
-    "降价",
-    "转化",
-    "旗舰店"
-  ],
-  "summary_keywords": [
-    "营销",
-    "品牌",
-    "案例",
-    "消费",
-    "零售",
-    "电商",
-    "广告",
-    "定价",
-    "爆款",
-    "出海",
-    "供应链",
-    "财报",
-    "外卖",
-    "会员",
-    "私域",
-    "种草",
-    "代言",
     "门店",
     "渠道",
-    "投放",
-    "联名",
-    "带货"
+    "会员",
+    "私域",
+    "增长",
+    "盈利",
+    "营收"
   ]
 }
