@@ -1,369 +1,392 @@
 {
-  "updated": "2026-11-27T17:03:26.792503+00:00",
-  "podcasts": [
-    {
-      "url": "https://proxy.wavpub.com/caffebreve.xml",
-      "title": "半拿铁 | 商业沉浮录",
-      "episodes": [
-        {
-          "title": "No.228 马拉松：跑步大时代",
-          "audio": "https://tk.wavpub.com/WPTK_RL1VQqVS4EHFUzVS.m4a",
-          "date": "Wed, 25 Nov 2026 20:51:00 +0800"
-        },
-        {
-          "title": "No.227 长虹往事：彩电大王今何在",
-          "audio": "https://tk.wavpub.com/WPTK_R1EYjGmGQqnHEhAP-077654da6bf1.m4a",
-          "date": "Wed, 18 Nov 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.226 文曲星的三十年往事",
-          "audio": "https://tk.wavpub.com/WPTK_Cq7Vhv8ixsdEqR1R.m4a",
-          "date": "Wed, 11 Nov 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.225 莆田鞋往事",
-          "audio": "https://tk.wavpub.com/WPTK_4zPVAaX3PDmU32i8.m4a",
-          "date": "Wed, 04 Nov 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.224 ️ 1492、破产、教皇、达芬奇、拉斐尔与托斯卡纳：美第奇家族·下",
-          "audio": "https://tk.wavpub.com/WPTK_yORO08REBVQQNOYi.m4a",
-          "date": "Wed, 28 Oct 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.223 “莆田系”医事：从电线杆到手术台",
-          "audio": "https://tk.wavpub.com/WPTK_a3bU9VWBFtQnG5Lp.m4a",
-          "date": "Wed, 21 Oct 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.222 ️ 1402、穹顶、暗杀、佛罗伦萨与文艺复兴：美第奇家族·上",
-          "audio": "https://tk.wavpub.com/WPTK_YN5rx5YoSy4ryIh4.m4a",
-          "date": "Wed, 14 Oct 2026 20:00:00 +0800"
-        },
-        {
-          "title": "番外 16：“情绪价值经济学”—花钱买开心，到底是不是一门好生意？",
-          "audio": "https://tk.wavpub.com/WPTK_ukQU8NPyfPWKJclB-633d29ac581f.m4a",
-          "date": "Tue, 13 Oct 2026 22:08:38 +0800"
-        },
-        {
-          "title": "No.221 中国辣条江湖",
-          "audio": "https://tk.wavpub.com/WPTK_eh3U9V5oztvVwhIE-58c168061609.m4a",
-          "date": "Wed, 30 Sep 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.220 互联网系列大结局：贾公下周回国日，乐视宏图未倒时 | 中国互联网故事 29",
-          "audio": "https://tk.wavpub.com/WPTK_TURDWhuf0PzfUflf.m4a",
-          "date": "Wed, 23 Sep 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.219 ️ 快递江湖三十年：桐庐帮、淘宝、拼多多与价格战",
-          "audio": "https://tk.wavpub.com/WPTK_aGbTyX2Iv5K9pE3o.m4a",
-          "date": "Wed, 16 Sep 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.218 O2O 与共享经济：属于单车、充电宝、上门美甲和按摩的魔幻撒钱年代",
-          "audio": "https://tk.wavpub.com/WPTK_fzyIdOOTQiotDRGZ-d903f2e335a6.m4a",
-          "date": "Wed, 09 Sep 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.217 宁波往事：从方太到申洲，从油烟机到中国最大服装代工巨头",
-          "audio": "https://tk.wavpub.com/WPTK_o9M01CpQlFgdZ7GD-3460105479ae.m4a",
-          "date": "Wed, 02 Sep 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.216 ⚔️ 「十步杀一人」：红衣大炮周鸿祎的三十年全面战争史 | 中国互联网故事 27",
-          "audio": "https://tk.wavpub.com/WPTK_j9EoKaukhJK33oR1-e6cdb3a833ba.m4a",
-          "date": "Wed, 26 Aug 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.215 华为不造车，鸿蒙智行到底是什么？",
-          "audio": "https://tk.wavpub.com/WPTK_x8OR3PJj7qr0TGLD-21e51fce87c9.m4a",
-          "date": "Fri, 21 Aug 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.214 寻找同类：小红书、bilibili，以及五花八门的那些社区 | 中国互联网故事 26",
-          "audio": "https://tk.wavpub.com/WPDL_sxcztaVUpusxqhyjeVzgtfQpjHmuKACPaNQcqBzWetrGExdrWCkKLSjgae-ea.m4a",
-          "date": "Wed, 12 Aug 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.213 景德镇往事：千年“世界瓷都”的前世今生",
-          "audio": "https://tk.wavpub.com/WPDL_zyEnADsGgGwEuRnuezmwmgGgSVqnUnvJXnrgrccFdRkZASmPqHGqSwhVvA-28.m4a",
-          "date": "Wed, 05 Aug 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.212 曾经的精神角落：豆瓣、知乎、贴吧、虎扑 | 中国互联网故事25",
-          "audio": "https://tk.wavpub.com/WPDL_rcFZxnBrLPLprHnsPnLZRBALqKtNPztCLRWDssqcMeWtqSmtPXszyvZCYT-f7.m4a",
-          "date": "Wed, 29 Jul 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.211 徽商往事：从前世不修到最牛风投",
-          "audio": "https://tk.wavpub.com/WPDL_smpwydvWVaHTrMnPpBMvPLjjejewcHMcNKEVuFqARcKudJQHVGwAPfHhfm-1a.m4a",
-          "date": "Wed, 22 Jul 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.210 中国手机江湖·下：从魅族小米锤子，到 OV 华为的新十年 | 中国互联网故事24",
-          "audio": "https://tk.wavpub.com/WPDL_nxdvCdaMGjUNBJDsjzCTMUAtAMjMRKLxEqhYQTschXzjDnmLTteXhCcSzf-54.m4a",
-          "date": "Wed, 15 Jul 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.209 晋商往事：走西口到乔家大院然后煤了",
-          "audio": "https://tk.wavpub.com/WPDL_CTkpdZesayvjFgswQbYpWRhVUzjDgfvmvXqehFCmsLgTnhZHFVaCssNSmT-20.m4a",
-          "date": "Wed, 08 Jul 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.208 中国手机江湖·上：摩托罗拉、诺基亚和爱立信的诸神黄昏 | 中国互联网故事23",
-          "audio": "https://tk.wavpub.com/WPDL_CwZbPWUMznvkWhzYqtWuehBMytGeZmNryTgEwvhUDybGbqVhUUBddLDrzu-b3.m4a",
-          "date": "Wed, 01 Jul 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.207 闽南往事：众神人间办事处，涨海声中万国商",
-          "audio": "https://tk.wavpub.com/WPDL_FZSgXeVLddQArbFCBtqrwbsgwKCnBeRKZDBhMaypxdVrhhaTPnAmpTsZdz-a7.m4a",
-          "date": "Wed, 24 Jun 2026 20:00:00 +0800"
-        },
-        {
-          "title": "番外 15： 半拿铁讲金瓶梅啦，而且还是绿色的",
-          "audio": "https://tk.wavpub.com/WPDL_TLmGjmpdrGBGFRdxckDrCYFHrazaygHmJdREtaRjNPGYCTCDVYBAKqncpQ-5a.m4a",
-          "date": "Thu, 18 Jun 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.206 检索、送药、看病：互联网医疗这些年 | 中国互联网故事22",
-          "audio": "https://tk.wavpub.com/WPDL_UfDbQxRHJWYckPgMULbGgkeecrQFbrFMAYfPBuQMubgekgSChZxaktmRFm-0d.m4a",
-          "date": "Wed, 17 Jun 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.205 ⛵️ 潮汕往事：侨批、经济特区和没有等来的深圳奇迹",
-          "audio": "https://tk.wavpub.com/WPDL_qmkQdwchpGhKXBpdTVhDeTuLKhzyHvGJNRWTXEkqggmFXKjrHzkHMKAmGe-1c.m4a",
-          "date": "Wed, 10 Jun 2026 18:27:27 +0800"
-        },
-        {
-          "title": "No.204 互联网视频平台混战：从后舍男生到漫长的季节 | 中国互联网故事21",
-          "audio": "https://tk.wavpub.com/WPDL_zvqqdcXbeNshSwELgyLKcgLCKXSfPEgYkUyTKDnxdvGpmTcqgXdqTVtttz-41.m4a",
-          "date": "Wed, 03 Jun 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.203 ✈️ “不死鸟”兰世立",
-          "audio": "https://tk.wavpub.com/WPDL_nrDzQSAkyFEYdupPXsqnnTLmBSJLgwWUYmcWRMCjPLKTHeuEjENrJJKHML-23.m4a",
-          "date": "Wed, 27 May 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.202 ️盛大的盛大，传奇的传奇 | 中国互联网故事20",
-          "audio": "https://tk.wavpub.com/WPDL_JNNdgLUWujTMxyxqnwmYyyRRJgatgQZZybeRztexSMPduSzDynwJCVLUty-7d.m4a",
-          "date": "Wed, 20 May 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.201 中国高铁简史",
-          "audio": "https://tk.wavpub.com/WPDL_HcKhZBGXWHxeaUDBMFhKMwDbbGWsfKGkNuLgdkgtQbDHjLyBtySpffwuJF-06.m4a",
-          "date": "Wed, 13 May 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.200 ⚔️ 电商三国之群雄逐鹿：腰挂公章、持剑拒签，以及 108 种死法",
-          "audio": "https://tk.wavpub.com/WPDL_uRdUZZhdqpcrtczGBBgjFjNzvzsqXCdpzQcMhCRkTHqTkNLXBNAmPLjARP-14.m4a",
-          "date": "Wed, 06 May 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.199 自行车 200年",
-          "audio": "https://tk.wavpub.com/WPDL_LJQzHzKaTtckjenYvLXsDDMWCUSKcBEmwQpYedZkykCuLREbNnUzyzTQvF-c7.m4a",
-          "date": "Wed, 29 Apr 2026 20:00:00 +0800"
-        },
-        {
-          "title": "番外 14： 跟李诞聊聊播客、创作、AI 与中年",
-          "audio": "https://tk.wavpub.com/WPDL_cHYwYBMYsMfYsLjnUuLnEczguvNzdWGDHeUebGByLcARyXKnCLAYrLfPma-d8.m4a",
-          "date": "Sun, 26 Apr 2026 00:03:16 +0800"
-        },
-        {
-          "title": "No.198 ️ 拼多多：五环外起青萍末，十年撼动巨擘间 | 中国互联网18",
-          "audio": "https://tk.wavpub.com/WPDL_ZMZsgwZeRpfMKcUNaBJTNVvfTeYVXUaRuKScftVawVgAXDPhKXXBWnjTNA-53.m4a",
-          "date": "Wed, 22 Apr 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.197 中国摩托车简史",
-          "audio": "https://tk.wavpub.com/WPDL_jWmGqAYgNdvKxdgYchFteSTetEUdkxPAQXhVezXHBWWqBWZqrBbdewugHN-14.m4a",
-          "date": "Wed, 15 Apr 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.196 电商三国之京东篇：从中关村柜台到万亿巨兽 | 中国互联网故事17",
-          "audio": "https://tk.wavpub.com/WPDL_LyqyStpHByWTbmTBHandjryVXVSRHkEbYNVqQUnqkspxjRFRvgZqbdCxtL-b0.m4a",
-          "date": "Wed, 08 Apr 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.195 从牛鬼蛇神到摩托大王：重庆首富的造车之殇",
-          "audio": "https://tk.wavpub.com/WPDL_WRGCBmujJewUAYMAyErMNSTvdgPnERZEEkQvXRfXYEKsTEBYuWsHDEbcAd-7f.m4a",
-          "date": "Wed, 01 Apr 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.194 浏览器简史：打造人类使用互联网的窗户",
-          "audio": "https://tk.wavpub.com/WPDL_sfpRewRpeLvNKYEunXQQTVBkvCxZcazhfmzGXVwNVKAAFhqmMETVaMMcVn-50.m4a",
-          "date": "Wed, 25 Mar 2026 20:00:00 +0800"
-        },
-        {
-          "title": "No.193 ️ 造车未竟：倒在中国自主汽车黎明前的先行者",
-          "audio": "https://tk.wavpub.com/WPDL_QCBBbeJMAHAMKzUcsTtjBJanRrBuyEcZkXRzqFwzPgFumWSvJLhUFTDtBs-7b.m4a",
-          "date": "Wed, 18 Mar 2026 20:00:00 +0800"
-        },
-        {
-          "title": "番外 13：聊聊真实世界里的商业品牌变换",
-          "audio": "https://tk.wavpub.com/WPDL_fXpGehLGWsvHJvefscnksPjGaSNsskrXXupHdHekKjGHQxVMDXEmVgssvV-a1.m4a",
-          "date": "Tue, 17 Mar 2026 22:26:07 +0800"
-        }
-      ]
-    }
-  ],
-  "cases": {
-    "title": "商业与营销案例",
-    "items": [
+  "updated": "2026-11-27T17:29:00.967160+00:00",
+  "followed": {
+    "title": "在听",
+    "subtitle": "已订阅的公开节目",
+    "shows": [
       {
-        "title": "中国客车出海，遇到了比关税更复杂的壁垒",
-        "url": "https://www.huxiu.com/article/4909104.html?f=rss",
-        "summary": "11月26日，挪威当地媒体报道称，布斯克吕郡交通委员会通过了一份有关公交车采购安全问题的意见书。该郡希望由挪威中央政府决定哪些客车制造商符合安全要求，并承担由此产生的额外采购成本。",
-        "source": "虎嗅",
-        "date": "2026-11-28",
-        "feed": "https://rss.huxiu.com/"
-      },
-      {
-        "title": "一碗拉面揭开堂食店的定价死穴",
-        "url": "https://www.huxiu.com/article/4909103.html?f=rss",
-        "summary": "最近公司附近开了新嘉中心，外卖列表一下子多了不少选择。我在里面点过一次梅将——一家做横滨家系的拉面店，汤头够浓，面条够劲，凑完满减四十多块，在一线城市的拉面赛道里算性价比不错。 抱着\"堂食口感一定更好\"的心态，我去了店里。",
-        "source": "虎嗅",
-        "date": "2026-11-28",
-        "feed": "https://rss.huxiu.com/"
-      },
-      {
-        "title": "耐克全球供应链再次受到考验",
-        "url": "https://www.huxiu.com/article/4909097.html?f=rss",
-        "summary": "11月25日，美国贸易代表办公室公布针对14个经济体的301调查结果及拟议关税方案。其中，越南面临最高35%的关税，印度尼西亚则面临最高18%的拟议税率。 第二天，越南政府表示，正在努力尽快与美国达成贸易协议。",
-        "source": "虎嗅",
-        "date": "2026-11-28",
-        "feed": "https://rss.huxiu.com/"
-      },
-      {
-        "title": "美国消费者在“黑色星期五”的线上消费将达到创纪录的129亿美元",
-        "url": "https://36kr.com/newsflashes/4088008177760647?f=rss",
-        "summary": "Adobe预计，美国消费者在“黑色星期五”的线上消费将达到创纪录的129亿美元，同比增长9.2%。（新浪财经）",
-        "source": "36氪",
-        "date": "2026-11-27",
-        "feed": "https://www.36kr.com/feed"
-      },
-      {
-        "title": "滴滴季报图解：营收657亿同比增12%，巴西外卖拓展至超150城市",
-        "url": "https://36kr.com/p/4087940086086016?f=rss",
-        "summary": "滴滴今日发布第三季度业绩报告。财报显示，滴滴2026年前9个月营收1870亿元，较上年同期的1682.56亿元增长11.1%；运营亏损为4.38亿元，净亏损11.39亿元。",
-        "source": "36氪",
-        "date": "2026-11-27",
-        "feed": "https://www.36kr.com/feed-article"
-      },
-      {
-        "title": "游戏大厂都在投入的AI漫剧，中小团队却用不起",
-        "url": "https://36kr.com/p/4087899824191875?f=rss",
-        "summary": "当游戏广告成为一部可以追看的漫剧。 “啊？真出剧了，我还以为广告呢？”这是一条来自3D AI短剧《全球淹没，我靠净水器称霸末日》的评论。 这部短剧是益世界《疯狂水世界》官方自制的衍生作品，今年8月在红果漫剧、火龙漫剧、抖音等多平台上线。",
-        "source": "36氪",
-        "date": "2026-11-27",
-        "feed": "https://www.36kr.com/feed-article"
-      },
-      {
-        "title": "王兴：预计明年AI相关的资本支出将低于今年",
-        "url": "https://36kr.com/newsflashes/4087966140119681?f=rss",
-        "summary": "36氪获悉，11月27日晚，美团三季度财报电话会上，CEO王兴表示，“AI要真正创造价值，关键在于将高价值场景、高质量数据和闭环执行能力深度结合，这正是美团的优势所在。",
-        "source": "36氪",
-        "date": "2026-11-27",
-        "feed": "https://www.36kr.com/feed"
-      },
-      {
-        "title": "京东集团与中国东航签署战略合作协议，共建高效协同的现代航空服务体系",
-        "url": "https://36kr.com/newsflashes/4087952631986562?f=rss",
-        "summary": "36氪获悉，11月27日，京东集团与中国东方航空集团有限公司在北京签署战略合作协议。双方有关负责人出席签约仪式，并就进一步加强战略合作进行了会谈交流。",
-        "source": "36氪",
-        "date": "2026-11-27",
-        "feed": "https://www.36kr.com/feed"
-      },
-      {
-        "title": "美团财报电话会：Keeta沙特实现全季度盈利",
-        "url": "https://36kr.com/newsflashes/4087963451603593?f=rss",
-        "summary": "36氪获悉，11月27日晚，美团三季度财报电话会上，CFO陈少晖分享了美团国际化进展。Keeta延续了强劲的增长势头，且效率持续提升。香港稳定盈利，中东效率继续改善，特别是沙特在Q3全季度已经盈利。",
-        "source": "36氪",
-        "date": "2026-11-27",
-        "feed": "https://www.36kr.com/feed"
-      },
-      {
-        "title": "美团财报电话会：预期四季度餐饮外卖UE较二季度明显提升",
-        "url": "https://36kr.com/newsflashes/4087962180041092?f=rss",
-        "summary": "36氪获悉，11月27日晚，在财报电话会上，美团管理层披露，三季度餐饮外卖UE较二季度有所回落，但9月UE修复明显，优于二季度平均水平，而10月UE环比9月继续提升。",
-        "source": "36氪",
-        "date": "2026-11-27",
-        "feed": "https://www.36kr.com/feed"
-      },
-      {
-        "title": "乡镇外卖崛起，有平台称骑手一单收入抵城市两单",
-        "url": "https://36kr.com/p/4087787414796931?f=rss",
-        "summary": "在巨头夹缝中，一批乡镇外卖平台正在悄悄生长。 近期，一个名为“星火速达”的外卖平台（下称“星火外卖”）在骑手群体中引发讨论。",
-        "source": "36氪",
-        "date": "2026-11-27",
-        "feed": "https://www.36kr.com/feed-article"
-      },
-      {
-        "title": "泡面吃腻、外卖吃烦，年轻的“过日子人”爱上了1.5元的快手菜",
-        "url": "https://36kr.com/p/4087865867270534?f=rss",
-        "summary": "从上世纪九十年代到今天，中国人的“快速吃饭解决方案”，已经走过了两代。 第一代是方便面。对很多 80 后、90 后来说，宿舍的开水壶、春运的绿皮火车、深夜的书桌旁，都少不了一碗红烧牛肉面的影子，是那个年代当之无愧的 “吃饭救星”。",
-        "source": "36氪",
-        "date": "2026-11-27",
-        "feed": "https://www.36kr.com/feed-article"
-      },
-      {
-        "title": "88元6寸的五星级酒店蛋糕，被年轻人抢着买",
-        "url": "https://36kr.com/p/4087818012244352?f=rss",
-        "summary": "打工人越来越吃不起蛋糕了。 打开外卖软件，一块切角几十元，一个4寸蛋糕动辄两三百的价格，让人瞬间食欲消失。本以为“杀糕局”能同时保住钱包和体重，踩完一个接一个的坑后，只想“封心锁爱”，从此戒掉甜品。",
-        "source": "36氪",
-        "date": "2026-11-27",
-        "feed": "https://www.36kr.com/feed-article"
-      },
-      {
-        "title": "中泰聚能CTO彭小舟：一台机器人，两班倒价值 | 36氪 2026WISE商业之王大会",
-        "url": "https://36kr.com/p/4087739263072896?f=rss",
-        "summary": "机器人跨过演示、走向场景的这一年，落地的问题换了一副面孔：过去问「能不能做到」，现在问「敢不敢用、值不值、怎么合作」。",
-        "source": "36氪",
-        "date": "2026-11-27",
-        "feed": "https://www.36kr.com/feed"
-      },
-      {
-        "title": "问界入局换电，已立项换电版问界M6｜36氪独家",
-        "url": "https://36kr.com/p/4087730299894153?f=rss",
-        "summary": "36氪从多位产业人士处了解到，高端自主品牌问界将入局换电，已经立项了换电版问界M6。另有接近问界的行业人士表示，赛力斯的初步想法是，依托宁德时代的换电体系开发换电车型，双方正在洽谈更具体的合作模式。",
-        "source": "36氪",
-        "date": "2026-11-27",
-        "feed": "https://www.36kr.com/feed"
-      },
-      {
-        "title": "希音的韧性底色",
-        "url": "https://36kr.com/p/4087683903814274?f=rss",
-        "summary": "对于9月份刚敲钟上市的希音（SHEIN）而言，三季度的意义是特殊的。 这是它上市后第一份完整季度财报，也是外部政策冲击最为集中的一个季度。",
-        "source": "36氪",
-        "date": "2026-11-27",
-        "feed": "https://www.36kr.com/feed"
-      },
-      {
-        "title": "36氪首发丨具身智能公司获清科产投等数亿投资，机器人已投入真实商业作业",
-        "url": "https://36kr.com/p/4087361074575753?f=rss",
-        "summary": "硬氪获悉，具身智能公司零次方机器人（Zerith）近日完成新一轮数亿元融资。本轮投资方包括清科产投、锡洲国际、卓源亚洲、粤民溯锋、无锡滨湖、合肥建投、合肥产投国正、杰克集团以及多家产业战略投资方。",
-        "source": "36氪",
-        "date": "2026-11-27",
-        "feed": "https://www.36kr.com/feed"
-      },
-      {
-        "title": "游戏和影视之后，儒意集团联手腾讯进军AI服务",
-        "url": "https://36kr.com/p/4086757655231105?f=rss",
-        "summary": "过去两年，中国游戏行业最明显的变化不是某个爆款出现，而是头部格局基本定型。腾讯、网易、米哈游等大厂各自守住了基本盘，新产品很难撼动位置。那么剩下的空间在哪里？如果从行业讨论的热门话题里找，有两个关键词：出海和AI。",
-        "source": "36氪",
-        "date": "2026-11-27",
-        "feed": "https://www.36kr.com/feed"
-      },
-      {
-        "title": "始于爆款，困于爆款，北极狐不想只当「卖包的」",
-        "url": "https://36kr.com/p/4086378667600512?f=rss",
-        "summary": "一只小狐狸蜷缩着，尾巴遮住大半身子，只探出一个头。 这是北极狐（Fjällräven）的商标，也像它在中国市场的长期处境： 它的一款单品太过耀眼：十几年前，旗下Kanken背包风靡街头，样式至今几乎没变，仍随处可见。",
-        "source": "36氪",
-        "date": "2026-11-26",
-        "feed": "https://www.36kr.com/feed"
+        "title": "半拿铁 | 商业沉浮录",
+        "url": "https://proxy.wavpub.com/caffebreve.xml",
+        "kind": "audio",
+        "episodes": [
+          {
+            "title": "No.228 马拉松：跑步大时代",
+            "audio": "https://tk.wavpub.com/WPTK_RL1VQqVS4EHFUzVS.m4a",
+            "date": "2026-11-25",
+            "kind": "audio"
+          },
+          {
+            "title": "No.227 长虹往事：彩电大王今何在",
+            "audio": "https://tk.wavpub.com/WPTK_R1EYjGmGQqnHEhAP-077654da6bf1.m4a",
+            "date": "2026-11-18",
+            "kind": "audio"
+          },
+          {
+            "title": "No.226 文曲星的三十年往事",
+            "audio": "https://tk.wavpub.com/WPTK_Cq7Vhv8ixsdEqR1R.m4a",
+            "date": "2026-11-11",
+            "kind": "audio"
+          },
+          {
+            "title": "No.225 莆田鞋往事",
+            "audio": "https://tk.wavpub.com/WPTK_4zPVAaX3PDmU32i8.m4a",
+            "date": "2026-11-04",
+            "kind": "audio"
+          },
+          {
+            "title": "No.224 ️ 1492、破产、教皇、达芬奇、拉斐尔与托斯卡纳：美第奇家族·下",
+            "audio": "https://tk.wavpub.com/WPTK_yORO08REBVQQNOYi.m4a",
+            "date": "2026-10-28",
+            "kind": "audio"
+          },
+          {
+            "title": "No.223 “莆田系”医事：从电线杆到手术台",
+            "audio": "https://tk.wavpub.com/WPTK_a3bU9VWBFtQnG5Lp.m4a",
+            "date": "2026-10-21",
+            "kind": "audio"
+          },
+          {
+            "title": "No.222 ️ 1402、穹顶、暗杀、佛罗伦萨与文艺复兴：美第奇家族·上",
+            "audio": "https://tk.wavpub.com/WPTK_YN5rx5YoSy4ryIh4.m4a",
+            "date": "2026-10-14",
+            "kind": "audio"
+          },
+          {
+            "title": "番外 16：“情绪价值经济学”—花钱买开心，到底是不是一门好生意？",
+            "audio": "https://tk.wavpub.com/WPTK_ukQU8NPyfPWKJclB-633d29ac581f.m4a",
+            "date": "2026-10-13",
+            "kind": "audio"
+          },
+          {
+            "title": "No.221 中国辣条江湖",
+            "audio": "https://tk.wavpub.com/WPTK_eh3U9V5oztvVwhIE-58c168061609.m4a",
+            "date": "2026-09-30",
+            "kind": "audio"
+          },
+          {
+            "title": "No.220 互联网系列大结局：贾公下周回国日，乐视宏图未倒时 | 中国互联网故事 29",
+            "audio": "https://tk.wavpub.com/WPTK_TURDWhuf0PzfUflf.m4a",
+            "date": "2026-09-23",
+            "kind": "audio"
+          },
+          {
+            "title": "No.219 ️ 快递江湖三十年：桐庐帮、淘宝、拼多多与价格战",
+            "audio": "https://tk.wavpub.com/WPTK_aGbTyX2Iv5K9pE3o.m4a",
+            "date": "2026-09-16",
+            "kind": "audio"
+          },
+          {
+            "title": "No.218 O2O 与共享经济：属于单车、充电宝、上门美甲和按摩的魔幻撒钱年代",
+            "audio": "https://tk.wavpub.com/WPTK_fzyIdOOTQiotDRGZ-d903f2e335a6.m4a",
+            "date": "2026-09-09",
+            "kind": "audio"
+          },
+          {
+            "title": "No.217 宁波往事：从方太到申洲，从油烟机到中国最大服装代工巨头",
+            "audio": "https://tk.wavpub.com/WPTK_o9M01CpQlFgdZ7GD-3460105479ae.m4a",
+            "date": "2026-09-02",
+            "kind": "audio"
+          },
+          {
+            "title": "No.216 ⚔️ 「十步杀一人」：红衣大炮周鸿祎的三十年全面战争史 | 中国互联网故事 27",
+            "audio": "https://tk.wavpub.com/WPTK_j9EoKaukhJK33oR1-e6cdb3a833ba.m4a",
+            "date": "2026-08-26",
+            "kind": "audio"
+          },
+          {
+            "title": "No.215 华为不造车，鸿蒙智行到底是什么？",
+            "audio": "https://tk.wavpub.com/WPTK_x8OR3PJj7qr0TGLD-21e51fce87c9.m4a",
+            "date": "2026-08-21",
+            "kind": "audio"
+          },
+          {
+            "title": "No.214 寻找同类：小红书、bilibili，以及五花八门的那些社区 | 中国互联网故事 26",
+            "audio": "https://tk.wavpub.com/WPDL_sxcztaVUpusxqhyjeVzgtfQpjHmuKACPaNQcqBzWetrGExdrWCkKLSjgae-ea.m4a",
+            "date": "2026-08-12",
+            "kind": "audio"
+          },
+          {
+            "title": "No.213 景德镇往事：千年“世界瓷都”的前世今生",
+            "audio": "https://tk.wavpub.com/WPDL_zyEnADsGgGwEuRnuezmwmgGgSVqnUnvJXnrgrccFdRkZASmPqHGqSwhVvA-28.m4a",
+            "date": "2026-08-05",
+            "kind": "audio"
+          },
+          {
+            "title": "No.212 曾经的精神角落：豆瓣、知乎、贴吧、虎扑 | 中国互联网故事25",
+            "audio": "https://tk.wavpub.com/WPDL_rcFZxnBrLPLprHnsPnLZRBALqKtNPztCLRWDssqcMeWtqSmtPXszyvZCYT-f7.m4a",
+            "date": "2026-07-29",
+            "kind": "audio"
+          },
+          {
+            "title": "No.211 徽商往事：从前世不修到最牛风投",
+            "audio": "https://tk.wavpub.com/WPDL_smpwydvWVaHTrMnPpBMvPLjjejewcHMcNKEVuFqARcKudJQHVGwAPfHhfm-1a.m4a",
+            "date": "2026-07-22",
+            "kind": "audio"
+          },
+          {
+            "title": "No.210 中国手机江湖·下：从魅族小米锤子，到 OV 华为的新十年 | 中国互联网故事24",
+            "audio": "https://tk.wavpub.com/WPDL_nxdvCdaMGjUNBJDsjzCTMUAtAMjMRKLxEqhYQTschXzjDnmLTteXhCcSzf-54.m4a",
+            "date": "2026-07-15",
+            "kind": "audio"
+          }
+        ]
       }
     ]
   },
+  "marketing": {
+    "title": "营销案例",
+    "subtitle": "公开音频，以及可朗读的短导语",
+    "shows": [
+      {
+        "title": "营响·品牌营销随时听",
+        "url": "https://www.ximalaya.com/album/46952585.xml",
+        "kind": "audio",
+        "episodes": [
+          {
+            "title": "陈柳明：让营销变简单",
+            "audio": "https://jt.ximalaya.com//GMCoOSEJWbacACAAAAKP0rw-.mp3.m4a?channel=rss&album_id=46952585&track_id=694867668&uid=12079726&jt=https://aod.cos.tx.xmcdn.com/storages/ef6a-audiofreehighqps/4A/D8/GMCoOSEJWbacACAAAAKP0rw-.mp3",
+            "date": "2023-12-21",
+            "kind": "audio"
+          },
+          {
+            "title": "做成3个10亿级别的品牌后，C咖团队如何靠all in抖音实现130%的年增长",
+            "audio": "https://jt.ximalaya.com//GMCoOSQJWZgDACAAAAKPxbzg.mp3.m4a?channel=rss&album_id=46952585&track_id=694851308&uid=12079726&jt=https://aod.cos.tx.xmcdn.com/storages/1a4a-audiofreehighqps/52/DB/GMCoOSQJWZgDACAAAAKPxbzg.mp3",
+            "date": "2023-12-21",
+            "kind": "audio"
+          },
+          {
+            "title": "黄天宇：2023电商生态-双十一战后复盘",
+            "audio": "https://jt.ximalaya.com//GKwRIRwJRK7hACAAAAKHDh0o.mp3.m4a?channel=rss&album_id=46952585&track_id=690791967&uid=12079726&jt=https://aod.cos.tx.xmcdn.com/storages/6a1d-audiofreehighqps/44/30/GKwRIRwJRK7hACAAAAKHDh0o.mp3",
+            "date": "2023-12-05",
+            "kind": "audio"
+          },
+          {
+            "title": "王心路：2023，盈利的思域该怎么做",
+            "audio": "https://jt.ximalaya.com//GKwRIJEJRKiIACAAAAKHBtff.mp3.m4a?channel=rss&album_id=46952585&track_id=690787229&uid=12079726&jt=https://aod.cos.tx.xmcdn.com/storages/da21-audiofreehighqps/CE/51/GKwRIJEJRKiIACAAAAKHBtff.mp3",
+            "date": "2023-12-05",
+            "kind": "audio"
+          },
+          {
+            "title": "赵仪：24年小红书年度规划怎么做",
+            "audio": "https://jt.ximalaya.com//GKwRIDoJRJ2hACAAAAKHAhA2.mp3.m4a?channel=rss&album_id=46952585&track_id=690779021&uid=12079726&jt=https://aod.cos.tx.xmcdn.com/storages/c623-audiofreehighqps/B9/8A/GKwRIDoJRJ2hACAAAAKHAhA2.mp3",
+            "date": "2023-12-05",
+            "kind": "audio"
+          },
+          {
+            "title": "杨晶：我想做一个论坛，聚集中法两国最有创造力的人",
+            "audio": "https://jt.ximalaya.com//GKwRIUEJRGJOACAAAAKG5_s7.mp3.m4a?channel=rss&album_id=46952585&track_id=690735480&uid=12079726&jt=https://aod.cos.tx.xmcdn.com/storages/d154-audiofreehighqps/F4/44/GKwRIUEJRGJOACAAAAKG5_s7.mp3",
+            "date": "2023-12-05",
+            "kind": "audio"
+          },
+          {
+            "title": "（三）：打破固有信息渠道，寻找新的学习资源",
+            "audio": "https://jt.ximalaya.com//GKwRIDoIewMYACAAAAIz1Y-C.mp3.m4a?channel=rss&album_id=46952585&track_id=646343928&uid=12079726&jt=https://aod.cos.tx.xmcdn.com/storages/7c2c-audiofreehighqps/5E/B6/GKwRIDoIewMYACAAAAIz1Y-C.mp3",
+            "date": "2023-07-05",
+            "kind": "audio"
+          },
+          {
+            "title": "（二）：Marketer如何从科技新闻中选出有价值的信息",
+            "audio": "https://jt.ximalaya.com//GKwRIasIewK3ACAAAAIz1Vhv.mp3.m4a?channel=rss&album_id=46952585&track_id=646343570&uid=12079726&jt=https://aod.cos.tx.xmcdn.com/storages/6986-audiofreehighqps/6F/BA/GKwRIasIewK3ACAAAAIz1Vhv.mp3",
+            "date": "2023-07-05",
+            "kind": "audio"
+          }
+        ]
+      },
+      {
+        "title": "虎嗅·商业有味道",
+        "url": "https://www.ximalaya.com/album/2823309.xml",
+        "kind": "audio",
+        "episodes": [
+          {
+            "title": "景区扩招，怎么来的都是硅基的？",
+            "audio": "https://jt.ximalaya.com//GKwRIMAO3amAAFHgQgUBnVCz.m4a?channel=rss&album_id=2823309&track_id=1035755680&uid=30790961&jt=https://aod.cos.tx.xmcdn.com/storages/2f17-audiofreehighqps/F0/71/GKwRIMAO3amAAFHgQgUBnVCz.m4a",
+            "date": "2026-11-26",
+            "kind": "audio"
+          },
+          {
+            "title": "腾讯，为什么到最危险的时刻了？",
+            "audio": "https://jt.ximalaya.com//GKwRIW4O2tfYAEaevwUAZF35.m4a?channel=rss&album_id=2823309&track_id=1035189585&uid=30790961&jt=https://aod.cos.tx.xmcdn.com/storages/9292-audiofreehighqps/28/E6/GKwRIW4O2tfYAEaevwUAZF35.m4a",
+            "date": "2026-11-24",
+            "kind": "audio"
+          },
+          {
+            "title": "“共享儿女”火了，这门生意为什么难赚钱？",
+            "audio": "https://jt.ximalaya.com//GKwRIW4O1DOUADu7mwT9pr6J.m4a?channel=rss&album_id=2823309&track_id=1033971235&uid=30790961&jt=https://aod.cos.tx.xmcdn.com/storages/1cee-audiofreehighqps/A6/03/GKwRIW4O1DOUADu7mwT9pr6J.m4a",
+            "date": "2026-11-19",
+            "kind": "audio"
+          },
+          {
+            "title": "高性价比人生指南，到底教会普通人什么？",
+            "audio": "https://jt.ximalaya.com//GKwRIJIO0XemAEnQ9gT8kVme.m4a?channel=rss&album_id=2823309&track_id=1033391623&uid=30790961&jt=https://aod.cos.tx.xmcdn.com/storages/1f38-audiofreehighqps/38/E7/GKwRIJIO0XemAEnQ9gT8kVme.m4a",
+            "date": "2026-11-17",
+            "kind": "audio"
+          },
+          {
+            "title": "王健林回来了，可万达最赚钱的生意不在他手里",
+            "audio": "https://jt.ximalaya.com//GKwRIRwOyfM7ADP5HwT5rpv9.m4a?channel=rss&album_id=2823309&track_id=1031905300&uid=30790961&jt=https://aod.cos.tx.xmcdn.com/storages/1c9d-audiofreehighqps/CF/4C/GKwRIRwOyfM7ADP5HwT5rpv9.m4a",
+            "date": "2026-11-11",
+            "kind": "audio"
+          },
+          {
+            "title": "黄仁勋道歉，英伟达为什么要启动调查？",
+            "audio": "https://jt.ximalaya.com//GKwRIJIOyEFGADpC4AT43TkI.m4a?channel=rss&album_id=2823309&track_id=1031599336&uid=30790961&jt=https://aod.cos.tx.xmcdn.com/storages/4ba5-audiofreehighqps/3F/15/GKwRIJIOyEFGADpC4AT43TkI.m4a",
+            "date": "2026-11-10",
+            "kind": "audio"
+          },
+          {
+            "title": "《后会友期》，带火了一包鸭舌？",
+            "audio": "https://jt.ximalaya.com//GKwRIDoOwHIGAEDsGgT1bVrC.m4a?channel=rss&album_id=2823309&track_id=1030162407&uid=30790961&jt=https://aod.cos.tx.xmcdn.com/storages/7b12-audiofreehighqps/DF/BD/GKwRIDoOwHIGAEDsGgT1bVrC.m4a",
+            "date": "2026-11-05",
+            "kind": "audio"
+          },
+          {
+            "title": "姆巴佩一句话，害苦了背后的合作品牌",
+            "audio": "https://jt.ximalaya.com//GKwRIJEOv0VTAEnOlwT04-1i.m4a?channel=rss&album_id=2823309&track_id=1029950824&uid=30790961&jt=https://aod.cos.tx.xmcdn.com/storages/18c0-audiofreehighqps/91/0B/GKwRIJEOv0VTAEnOlwT04-1i.m4a",
+            "date": "2026-11-03",
+            "kind": "audio"
+          }
+        ]
+      },
+      {
+        "title": "MSAI营销科学",
+        "url": "https://www.ximalaya.com/album/83149212.xml",
+        "kind": "audio",
+        "episodes": [
+          {
+            "title": "EP.103 AI用得越多，企业增长就越快？真正的商业竞争才刚刚开始",
+            "audio": "https://jt.ximalaya.com//GKwRIUEOy2rdAK5NzQT6QFLS.m4a?channel=rss&album_id=83149212&track_id=1032145075&uid=503409160&jt=https://aod.cos.tx.xmcdn.com/storages/eca7-audiofreehighqps/46/7F/GKwRIUEOy2rdAK5NzQT6QFLS.m4a",
+            "date": "2026-11-12",
+            "kind": "audio"
+          },
+          {
+            "title": "EP.102 AI工具用得越多，企业就会增长吗？ 从Token消耗到创造客户，重新理解AI商业增长的关键变量",
+            "audio": "https://jt.ximalaya.com//GKwRIMAOpK0bAK5NzQToBtOY.m4a?channel=rss&album_id=83149212&track_id=1024150216&uid=503409160&jt=https://aod.cos.tx.xmcdn.com/storages/3133-audiofreehighqps/C9/BC/GKwRIMAOpK0bAK5NzQToBtOY.m4a",
+            "date": "2026-10-14",
+            "kind": "audio"
+          },
+          {
+            "title": "EP.101 《牛来》爆红之后：品牌真正要学的，不只是蹭热点",
+            "audio": "https://jt.ximalaya.com//GKwRIUEOZG90AOtk9QTM215X.m4a?channel=rss&album_id=83149212&track_id=1008732883&uid=503409160&jt=https://aod.cos.tx.xmcdn.com/storages/a931-audiofreehighqps/38/0D/GKwRIUEOZG90AOtk9QTM215X.m4a",
+            "date": "2026-08-26",
+            "kind": "audio"
+          },
+          {
+            "title": "EP.100 AI为什么推荐你？当搜索变成推理，品牌竞争正在从“抢流量”转向“进入AI的决策链”",
+            "audio": "https://jt.ximalaya.com//GKwRIMAOWFMmANTivATH3UWg.m4a?channel=rss&album_id=83149212&track_id=1006850661&uid=503409160&jt=https://aod.cos.tx.xmcdn.com/storages/1d3b-audiofreehighqps/18/1B/GKwRIMAOWFMmANTivATH3UWg.m4a",
+            "date": "2026-08-17",
+            "kind": "audio"
+          },
+          {
+            "title": "EP.98 拨开GEO乱象迷雾：AI时代的“决策份额”争夺与品牌长期主义",
+            "audio": "https://jt.ximalaya.com//GKwRIMAN9bbzANSZ4QSig8ht.m4a?channel=rss&album_id=83149212&track_id=980943772&uid=503409160&jt=https://aod.cos.tx.xmcdn.com/storages/7375-audiofreehighqps/EB/A7/GKwRIMAN9bbzANSZ4QSig8ht.m4a",
+            "date": "2026-06-03",
+            "kind": "audio"
+          },
+          {
+            "title": "EP.97 AI 驾驭与组织变革：从工具使用到人机共生的商业新范式",
+            "audio": "https://jt.ximalaya.com//GAqhT9EN6dIKACAAAASeYDo4.m4a?channel=rss&album_id=83149212&track_id=978999966&uid=503409160&jt=https://aod.cos.tx.xmcdn.com/storages/f482-audiofreehighqps/84/87/GAqhT9EN6dIKACAAAASeYDo4.m4a",
+            "date": "2026-05-25",
+            "kind": "audio"
+          },
+          {
+            "title": "EP.96 AI Agent 工作流革命：企业如何打造数字员工的“肌肉记忆”？",
+            "audio": "https://jt.ximalaya.com//GKwRIDoN5KLwACAAAASch5ok.m4a?channel=rss&album_id=83149212&track_id=978144517&uid=503409160&jt=https://aod.cos.tx.xmcdn.com/storages/c025-audiofreehighqps/66/08/GKwRIDoN5KLwACAAAASch5ok.m4a",
+            "date": "2026-05-21",
+            "kind": "audio"
+          },
+          {
+            "title": "EP.95 2026开年新热点：全民“养龙虾”与AI商业转型大时代",
+            "audio": "https://jt.ximalaya.com//GAqhXdgNqotvACAAAASGboGp.m4a?channel=rss&album_id=83149212&track_id=968489755&uid=503409160&jt=https://aod.cos.tx.xmcdn.com/storages/fed9-audiofreehighqps/F8/48/GAqhXdgNqotvACAAAASGboGp.m4a",
+            "date": "2026-04-07",
+            "kind": "audio"
+          }
+        ]
+      },
+      {
+        "title": "36氪",
+        "url": "https://www.36kr.com/feed-article",
+        "kind": "speech",
+        "episodes": [
+          {
+            "title": "滴滴季报图解：营收657亿同比增12%，巴西外卖拓展至超150城市",
+            "summary": "滴滴今日发布第三季度业绩报告。财报显示，滴滴2026年前9个月营收1870亿元，较上年同期的1682.56亿元增长11.1%；运营亏损为4.38亿元，净亏损1…",
+            "url": "https://36kr.com/p/4087940086086016?f=rss",
+            "date": "2026-11-27",
+            "kind": "speech",
+            "source": "36氪"
+          },
+          {
+            "title": "刚扭亏就遭蚂蚁砍单，奥比中光陷盈利幻像？",
+            "summary": "近日，有着“3D视觉第一股”之称的奥比中光正式向港交所递交招股书，推进“A+H”双资本平台布局。",
+            "url": "https://36kr.com/p/4087874879502727?f=rss",
+            "date": "2026-11-27",
+            "kind": "speech",
+            "source": "36氪"
+          },
+          {
+            "title": "AI算力基础设施盈利分化加剧，主体与收入性质决定谁能先盈利",
+            "summary": "同样一座智算中心，由地方国资平台出资建设，与由云厂商联合芯片厂共建运营，从立项第一天起就在两本不同的账上： 前者的钱来自财政资金与固定资产投资，收入靠机架出租…",
+            "url": "https://36kr.com/p/4087846166821249?f=rss",
+            "date": "2026-11-27",
+            "kind": "speech",
+            "source": "36氪"
+          },
+          {
+            "title": "乡镇外卖崛起，有平台称骑手一单收入抵城市两单",
+            "summary": "在巨头夹缝中，一批乡镇外卖平台正在悄悄生长。 近期，一个名为“星火速达”的外卖平台（下称“星火外卖”）在骑手群体中引发讨论。",
+            "url": "https://36kr.com/p/4087787414796931?f=rss",
+            "date": "2026-11-27",
+            "kind": "speech",
+            "source": "36氪"
+          },
+          {
+            "title": "泡面吃腻、外卖吃烦，年轻的“过日子人”爱上了1.5元的快手菜",
+            "summary": "从上世纪九十年代到今天，中国人的“快速吃饭解决方案”，已经走过了两代。 第一代是方便面。",
+            "url": "https://36kr.com/p/4087865867270534?f=rss",
+            "date": "2026-11-27",
+            "kind": "speech",
+            "source": "36氪"
+          }
+        ]
+      },
+      {
+        "title": "虎嗅",
+        "url": "https://rss.huxiu.com/",
+        "kind": "speech",
+        "episodes": [
+          {
+            "title": "中国客车出海，遇到了比关税更复杂的壁垒",
+            "summary": "11月26日，挪威当地媒体报道称，布斯克吕郡交通委员会通过了一份有关公交车采购安全问题的意见书。",
+            "url": "https://www.huxiu.com/article/4909104.html?f=rss",
+            "date": "2026-11-28",
+            "kind": "speech",
+            "source": "虎嗅"
+          },
+          {
+            "title": "一碗拉面揭开堂食店的定价死穴",
+            "summary": "最近公司附近开了新嘉中心，外卖列表一下子多了不少选择。",
+            "url": "https://www.huxiu.com/article/4909103.html?f=rss",
+            "date": "2026-11-28",
+            "kind": "speech",
+            "source": "虎嗅"
+          },
+          {
+            "title": "耐克全球供应链再次受到考验",
+            "summary": "11月25日，美国贸易代表办公室公布针对14个经济体的301调查结果及拟议关税方案。其中，越南面临最高35%的关税，印度尼西亚则面临最高18%的拟议税率。",
+            "url": "https://www.huxiu.com/article/4909097.html?f=rss",
+            "date": "2026-11-28",
+            "kind": "speech",
+            "source": "虎嗅"
+          }
+        ]
+      }
+    ]
+  },
+  "unavailable": [
+    {
+      "name": "罗永浩的十字路口",
+      "reason": "公开 RSS 目前返回 403，暂时无法加入。"
+    }
+  ],
   "errors": []
 }

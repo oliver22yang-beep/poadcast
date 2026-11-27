@@ -1,61 +1,61 @@
 <!doctype html>
 <html lang="zh-CN">
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#752be8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#4c1d95">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="style.css">
-<title>声间 · 个人收听空间</title>
-<body>
-<aside>
-  <h2>◉ 声间</h2>
-  <p>你的个人收听空间</p>
-  <a href="#latte">♫ 半拿铁</a>
-  <a href="#cases">▣ 商业与营销案例</a>
-  <small>留一点时间，听见新想法。</small>
-</aside>
-<main>
-  <header>
-    <span>LISTEN / LEARN / GROW</span>
-    <h1>现在，听点好内容。</h1>
-    <p>半拿铁，以及每天更新的商业与营销案例。</p>
-  </header>
-  <section class="hero">
-    <div>
-      <label>你的每日收听仪式</label>
-      <h2>让好奇心<br>多走一段路。</h2>
-      <p>从一杯咖啡，到一个商业故事。</p>
-    </div>
-    <div class="art">(( ◉ ))<br><small>ON AIR · 声间</small></div>
-  </section>
+<title>声间</title>
+<body data-player="idle">
+<header class="top">
+  <p class="brand">声间</p>
+  <h1>先选一类，再按播放。</h1>
+</header>
+<div class="picker" role="tablist" aria-label="分类">
+  <button id="tab-followed" type="button" role="tab" aria-selected="true" aria-controls="panel-followed">
+    <span class="cat-kicker">订阅节目</span>
+    <span class="cat-title">在听</span>
+    <span class="cat-sub">半拿铁</span>
+    <span class="cat-badge">已选</span>
+  </button>
+  <button id="tab-marketing" type="button" role="tab" aria-selected="false" aria-controls="panel-marketing">
+    <span class="cat-kicker">每天更新</span>
+    <span class="cat-title">营销案例</span>
+    <span class="cat-sub">音频 · 朗读</span>
+    <span class="cat-badge">已选</span>
+  </button>
+</div>
+<p id="status" role="status">正在读取节目…</p>
+<section id="panel-followed" role="tabpanel" aria-labelledby="tab-followed">
+  <p class="note" id="followed-note"></p>
   <form id="subscribe">
-    <input id="rss" type="url" required placeholder="粘贴公开 RSS 地址" aria-label="RSS 地址">
-    <button type="submit">添加订阅</button>
+    <input id="rss" type="url" required placeholder="添加公开 RSS" aria-label="RSS 地址" inputmode="url">
+    <button type="submit">订阅</button>
   </form>
-  <p id="status" role="status">正在读取节目…</p>
-  <section id="latte" class="category">
-    <h2 id="latte-heading">半拿铁 | 商业沉浮录 <span id="count" class="count"></span></h2>
-    <div id="latte-rows"></div>
-  </section>
-  <div id="extra-shows"></div>
-  <section id="cases" class="category">
-    <h2 id="case-heading">商业与营销案例 <span id="case-count" class="count"></span></h2>
-    <p class="dek" id="case-dek">每天整理公开的商业与营销案例，只保留标题、短摘要和原文链接。</p>
-    <div id="case-rows"></div>
-  </section>
-</main>
+  <div id="followed-chips" class="chips" role="toolbar" aria-label="在听的节目"></div>
+  <div id="followed-list" class="list"></div>
+</section>
+<section id="panel-marketing" role="tabpanel" aria-labelledby="tab-marketing" hidden>
+  <p class="note">音频直接播放。文章只朗读一句短导语，不保存、不朗读全文。</p>
+  <div id="marketing-chips" class="chips" role="toolbar" aria-label="营销案例来源"></div>
+  <div id="marketing-list" class="list"></div>
+</section>
 <footer>
-  <strong id="now">选择一期节目，开始收听</strong>
-  <audio id="audio" controls preload="metadata"></audio>
-  <div>
-    <button id="back" type="button">−15 秒</button>
-    <select id="speed" aria-label="播放速度">
+  <p id="now">选择一期，开始收听</p>
+  <p id="mode" class="mode"></p>
+  <audio id="audio" controls playsinline preload="metadata"></audio>
+  <div class="transport">
+    <button id="back" type="button">−15秒</button>
+    <select id="speed" aria-label="速度">
       <option>1</option>
       <option>1.25</option>
       <option>1.5</option>
       <option>2</option>
     </select>
-    <button id="forward" type="button">+30 秒</button>
+    <button id="forward" type="button">+30秒</button>
+    <button id="stop-speech" type="button">停止朗读</button>
   </div>
 </footer>
 <script src="app.js"></script>
