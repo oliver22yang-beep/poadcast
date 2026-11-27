@@ -1,0 +1,1 @@
+{"name": "声间 · 个人收听空间", "short_name": "声间", "start_url": "./", "scope": "./", "display": "standalone", "background_color": "#faf9fc", "theme_color": "#752be8", "icons": [{"src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}]}

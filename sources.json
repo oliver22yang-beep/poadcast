@@ -1,0 +1,21 @@
+{
+  "podcasts": [
+    {
+      "url": "https://proxy.wavpub.com/caffebreve.xml"
+    }
+  ],
+  "articles": [
+    {
+      "name": "Think with Google",
+      "url": "https://www.thinkwithgoogle.com/rss/",
+      "enabled": false
+    }
+  ],
+  "keywords": [
+    "business",
+    "marketing",
+    "brand",
+    "\u5546\u4e1a",
+    "\u8425\u9500"
+  ]
+}
