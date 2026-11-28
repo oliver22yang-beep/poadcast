@@ -2,6 +2,7 @@ const $ = selector => document.querySelector(selector);
 const audio = $('#audio');
 let current = null;
 let utterance = null;
+let activeSpeech = null;
 const read = (key, fallback) => {
   try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; }
 };
@@ -63,6 +64,7 @@ function fallbackDownload(url, filename) {
 }
 function setPlayer(mode) { document.body.dataset.player = mode; }
 function stopSpeech() {
+  activeSpeech = null;
   utterance = null;
   if (window.speechSynthesis) window.speechSynthesis.cancel();
   if (document.body.dataset.player === 'speech') {
@@ -76,6 +78,7 @@ function chineseVoice() {
   return voices.find(voice => /zh([-_]CN)?/i.test(voice.lang)) || null;
 }
 function speechLine(item) {
+  if (item.script) return item.script;
   const lead = (item.summary || '').trim().slice(0, 80);
   const line = lead ? item.title + '。' + lead : item.title;
   return (line + '。全文请打开原文。').replace(/。。+/g, '。').slice(0, 180);
@@ -101,30 +104,34 @@ function playSpeech(item) {
     return;
   }
   audio.pause();
+  activeSpeech = null;
   window.speechSynthesis.cancel();
   current = item;
   const line = speechLine(item);
-  utterance = new SpeechSynthesisUtterance(line);
+  const chunks = line.match(/[^。！？\n]{1,100}[。！？\n]?|[。！？\n]/gu) || [line];
+  let pos = 0;
+  const run = {};
+  activeSpeech = run;
+  function next() {
+    if (activeSpeech !== run) return;
+    if (pos >= chunks.length) { setPlayer('idle'); $('#mode').textContent = '朗读结束'; markPlaying(null); return; }
+    utterance = new SpeechSynthesisUtterance(chunks[pos++]);
   utterance.lang = 'zh-CN';
   utterance.rate = rate();
   const voice = chineseVoice();
   if (voice) utterance.voice = voice;
-  utterance.onend = () => {
-    if (current === item) {
-      setPlayer('idle');
-      $('#mode').textContent = '朗读结束。全文在原文链接。';
-      markPlaying(null);
-    }
-  };
-  utterance.onerror = () => note('系统语音没有开始。请用 iPhone Safari，并确认没有打开静音。');
-  $('#now').textContent = item.title;
-  $('#mode').textContent = '正在用系统语音朗读短导语';
-  setPlayer('speech');
-  save('last', { kind: 'speech', title: item.title, summary: item.summary || '', url: item.url, source: item.source || '', show: item.show || '' });
-  markPlaying(item);
+  utterance.onend = next;
+  utterance.onerror = () => { if (activeSpeech === run) { activeSpeech = null; setPlayer('idle'); markPlaying(null); note('朗读中断，请使用 Safari 重试。'); } };
   window.speechSynthesis.speak(utterance);
+  }
+  $('#now').textContent = item.title;
+  $('#mode').textContent = item.script ? '正在朗读完整原创文稿' : '正在用系统语音朗读短导语';
+  setPlayer('speech');
+  save('last', { kind: 'speech', title: item.title, summary: item.summary || '', script: item.script || '', url: item.url, source: item.source || '', show: item.show || '' });
+  markPlaying(item);
+  next();
   setTimeout(() => { if (window.speechSynthesis.paused) window.speechSynthesis.resume(); }, 200);
-  note('只朗读标题和一句导语，不朗读全文。');
+  note(item.script ? '原创节目：系统语音朗读完整文稿。' : '仅朗读公开来源导语；全文请打开原文。');
 }
 function play(item) {
   if (item.kind === 'speech') playSpeech(item);
@@ -180,16 +187,16 @@ function downloadSpeech(item) {
   const lines = [
     item.title,
     '',
-    item.summary || '（没有导语）',
+    item.script || item.summary || '（没有导语）',
     '',
     '原文：' + item.url,
     '来源：' + (item.source || item.show || '营销案例'),
     item.date ? '日期：' + item.date : '',
     '',
-    '声间只保存标题、一句短导语和原文链接，未保存全文。'
+    item.script ? 'AI 原创节目文稿' : '声间只保存标题、一句短导语和原文链接，未保存全文。'
   ];
   saveBlob(new Blob(['\ufeff' + lines.join('\n')], { type: 'text/plain;charset=utf-8' }), safeName(item.title, '.txt'));
-  note('已下载短导语。全文请打开原文链接。');
+  note(item.script ? '已下载完整原创文稿。' : '已下载短导语。全文请打开原文链接。');
 }
 
 function itemKey(show, item, index) {
@@ -214,7 +221,7 @@ function card(show, item, index) {
   }
   const meta = document.createElement('p');
   meta.className = 'meta';
-  const bits = [show.title, item.kind === 'speech' ? '朗读' : '音频', item.date].filter(Boolean);
+  const bits = [show.title, item.ai ? 'AI 合成语音' : item.script ? '原创文稿' : item.kind === 'speech' ? '朗读' : '音频', item.date].filter(Boolean);
   meta.append(document.createTextNode(bits.join(' · ')));
   if (item.kind === 'speech' && safe(item.url)) {
     meta.append(document.createTextNode(' · '));
@@ -233,7 +240,7 @@ function card(show, item, index) {
   playButton.type = 'button';
   playButton.className = 'play';
   const payload = { ...item, show: show.title, key };
-  playButton.setAttribute('aria-label', (item.kind === 'speech' ? '朗读短导语 ' : '播放 ') + item.title);
+  playButton.setAttribute('aria-label', (item.kind === 'speech' ? (item.script ? '朗读原创节目 ' : '朗读短导语 ') : '播放 ') + item.title);
   playButton.onclick = () => play(payload);
   const download = el('button', '下载');
   download.type = 'button';
@@ -261,7 +268,7 @@ function visibleItems(name) {
   const chosen = picked === 'all' ? shows : shows.filter(show => show.url === picked);
   const items = [];
   chosen.forEach(show => (show.episodes || []).forEach((item, index) => {
-    if (item.kind === 'speech' ? safe(item.url) : safe(item.audio)) items.push({ show, item, index });
+    if (item.kind === 'speech' ? (Boolean(item.script) || safe(item.url)) : safe(item.audio)) items.push({ show, item, index });
   }));
   return items;
 }

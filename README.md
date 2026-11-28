@@ -39,3 +39,6 @@
 PWA 缓存同源页面及已读取数据，不缓存音频。离线可看已缓存列表，不能保证离线收听。iOS 可通过 Safari 分享菜单添加到主屏幕；安装能力依浏览器而异，正式上线建议补齐 192/512 PNG 图标。后台播放、锁屏行为受设备限制。浏览器播放错误会显示提示。未实现账号、搜索、订阅删除与云同步。下载依赖浏览器和音频源站：能跨域读取时直接保存，否则只能打开原地址。
 
 已做 JavaScript 语法检查及真实 RSS 解析；未做真机、浏览器视觉或端到端播放验证。macOS Python 如出现证书错误请安装其受信任证书，不要关闭 TLS 校验。
+
+## AI 原创节目（公开）
+在 originals/ 下提交独立 JSON，字段 id（唯一小写字母数字和连字符）、title、date、summary、script、sources。部署先更新 RSS，再合并原创节目，不修改 RSS 原有摘要版权限制。无密钥时用系统语音分段朗读完整原创文稿。启用 Azure Speech 时，在 Actions secrets 设置 AZURE_SPEECH_KEY，Actions variables 设置 AZURE_SPEECH_REGION（全球 Azure 区域），自动生成 MP3；GitHub Actions 缓存减少重复合成，但缓存可能过期。合成失败保留文稿朗读。需要 ffmpeg。所有内容和音频公开，不得上传私人资料。费用由 Azure 账户承担，配置前核实额度。尚需真机验证。
