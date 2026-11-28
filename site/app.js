@@ -262,8 +262,6 @@ function card(show, item, index) {
   row.dataset.key = key;
   const main = document.createElement('div');
   main.className = 'card-main';
-  const mark = el('div', item.kind === 'speech' ? '读' : '播');
-  mark.className = 'mark' + (item.kind === 'speech' ? ' speech' : '');
   const text = document.createElement('div');
   text.className = 'text';
   text.append(el('h3', item.title));
@@ -286,7 +284,7 @@ function card(show, item, index) {
     meta.append(link);
   }
   text.append(meta);
-  main.append(mark, text);
+  main.append(text);
   const actions = document.createElement('div');
   actions.className = 'actions';
   const playButton = el('button', '▶');
