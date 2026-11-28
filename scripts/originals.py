@@ -1,5 +1,6 @@
 """Merge public original episodes and optionally synthesize MP3 with Azure Speech."""
 import hashlib, json, os, re, subprocess, tempfile
+from datetime import datetime, timezone
 from pathlib import Path
 from urllib.request import Request, urlopen
 from xml.sax.saxutils import escape
@@ -11,12 +12,25 @@ BASE = "https://oliver22yang-beep.github.io/poadcast/"
 KEY = os.getenv("AZURE_SPEECH_KEY", "")
 REGION = os.getenv("AZURE_SPEECH_REGION", "")
 VOICE = "zh-CN-XiaoxiaoNeural"
+FREE_CONFIRMED = os.getenv("AZURE_F0_CONFIRMED") == "true"
+LEDGER = ROOT / ".tts-state" / (datetime.now(timezone.utc).strftime("%Y-%m") + ".json")
+LIMIT = 475000
+
+def reserve(text):
+    used = json.loads(LEDGER.read_text()).get("used", 0) if LEDGER.exists() else 0
+    units = len(text) * 2
+    if used + units > LIMIT: return False
+    LEDGER.parent.mkdir(parents=True, exist_ok=True)
+    LEDGER.write_text(json.dumps({"used": used + units}))
+    if used + units >= 400000: print("TTS local budget warning: 80%")
+    return True
 
 def synthesize(text, target):
-    if not KEY or not re.fullmatch(r"[a-z0-9]+", REGION):
-        return False
     if target.exists() and target.stat().st_size > 0:
         return True
+    if not FREE_CONFIRMED or not KEY or not re.fullmatch(r"[a-z0-9]+", REGION):
+        return False
+    if not reserve(text): return False
     target.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory() as tmp:
         parts = []
@@ -46,7 +60,7 @@ def main():
         seen.add(ident)
         digest = hashlib.sha256((VOICE + script).encode()).hexdigest()[:20]
         target = AUDIO / f"{ident}-{digest}.mp3"
-        ep = dict(title=item["title"], date=item["date"], summary=item.get("summary", ""), script=script, kind="speech", source="AI 原创", url=BASE, sources=item.get("sources", []))
+        ep = dict(id=ident, title=item["title"], date=item["date"], summary=item.get("summary", ""), script=script, kind="speech", source="AI 原创", url=BASE, sources=item.get("sources", []))
         try:
             if synthesize(script, target):
                 ep.update(kind="audio", audio=BASE + "audio/" + target.name, ai=True)

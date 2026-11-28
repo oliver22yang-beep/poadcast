@@ -42,3 +42,6 @@ PWA 缓存同源页面及已读取数据，不缓存音频。离线可看已缓�
 
 ## AI 原创节目（公开）
 在 originals/ 下提交独立 JSON，字段 id（唯一小写字母数字和连字符）、title、date、summary、script、sources。部署先更新 RSS，再合并原创节目，不修改 RSS 原有摘要版权限制。无密钥时用系统语音分段朗读完整原创文稿。启用 Azure Speech 时，在 Actions secrets 设置 AZURE_SPEECH_KEY，Actions variables 设置 AZURE_SPEECH_REGION（全球 Azure 区域），自动生成 MP3；GitHub Actions 缓存减少重复合成，但缓存可能过期。合成失败保留文稿朗读。需要 ffmpeg。所有内容和音频公开，不得上传私人资料。费用由 Azure 账户承担，配置前核实额度。尚需真机验证。
+
+## V3 实验版
+顶部发现、收听、沉淀导航；发现搜索当前节目库（不是真实网络 Agent），最多10条，添加/收藏仅本设备保存。沉淀可选择多条收藏导出整合请求，不会自动调用 AI。继续收听支持音频进度，系统朗读从头开始。Azure 必须由账户所有者确认资源为 F0 后设 AZURE_F0_CONFIRMED=true；未确认或超预算时回退系统朗读。缓存账本仅是本项目保守估算，可能因缓存过期而丢失，不能代替 Azure F0 服务端限额；切勿配置 S0 密钥。公开网站只发布公开内容。

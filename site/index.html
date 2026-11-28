@@ -12,16 +12,19 @@
 <header class="top">
   <div><p class="brand">SHENGJIAN · PODCASTS</p><h1>声间</h1></div><span class="header-label">随时收听</span>
 </header>
-<div class="picker" role="tablist" aria-label="分类">
+<nav class="primary-nav" aria-label="主导航"><button data-page="discover" type="button"><span aria-hidden="true">⌕</span>发现</button><button data-page="listen" type="button"><span aria-hidden="true">♫</span>收听</button><button data-page="library" type="button"><span aria-hidden="true">▤</span>沉淀</button></nav>
+<section id="discover-page" hidden><h2>今天想学习什么？</h2><form id="discover-form"><input id="discover-query" placeholder="例如：品牌转型" required maxlength="200"><button>搜索</button></form><p class="note">当前搜索已收录节目；尚未连接外部研究 Agent。</p><div id="discover-results" class="list"></div></section>
+<section id="library-page" hidden><h2>我的收藏</h2><p class="note">收藏仅保存在当前设备。选择多篇资料后可导出整合请求。</p><button id="export-synthesis" class="utility">导出知识整合请求</button><div id="library-list" class="list"></div></section>
+<main id="listen-page"><div id="resume-box" hidden><button id="resume-episode" class="utility">继续收听</button></div><div class="picker" role="tablist" aria-label="分类">
   <button id="tab-followed" type="button" role="tab" aria-selected="true" aria-controls="panel-followed">
     <span class="cat-kicker">订阅节目</span>
-    <span class="cat-title">在听</span>
+    <span class="cat-title">外部订阅</span>
     <span class="cat-sub">半拿铁</span>
     <span class="cat-badge">已选</span>
   </button>
   <button id="tab-marketing" type="button" role="tab" aria-selected="false" aria-controls="panel-marketing">
     <span class="cat-kicker">每天更新</span>
-    <span class="cat-title">营销案例</span>
+    <span class="cat-title">自主内容</span>
     <span class="cat-sub">音频 · 朗读</span>
     <span class="cat-badge">已选</span>
   </button>
@@ -41,7 +44,7 @@
   <div id="marketing-chips" class="chips" role="toolbar" aria-label="营销案例来源"></div>
   <div id="marketing-list" class="list"></div>
 </section>
-<footer>
+</main><footer class="mini"><div class="mini-controls"><button id="mini-toggle" type="button" aria-label="播放或暂停">▶</button><button id="mini-expand" type="button" aria-expanded="false">展开播放器</button></div>
   <p id="now">选择一期，开始收听</p>
   <p id="mode" class="mode"></p>
   <audio id="audio" controls playsinline preload="metadata"></audio>

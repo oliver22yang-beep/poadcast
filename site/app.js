@@ -1,6 +1,8 @@
 const $ = selector => document.querySelector(selector);
 const audio = $('#audio');
 let current = null;
+let page = readPage();
+function readPage(){try{return JSON.parse(localStorage.getItem('page')) || 'listen'}catch{return 'listen'}}
 let utterance = null;
 let activeSpeech = null;
 const read = (key, fallback) => {
@@ -10,6 +12,51 @@ const save = (key, value) => {
   try { localStorage.setItem(key, JSON.stringify(value)); } catch { /* private mode */ }
 };
 let progress = read('progress', {});
+let favorites = read('favorites-v3', {});
+let added = read('added-v3', {});
+let selected = new Set();
+let lastSearch = '';
+function stableId(item){return item.id || (item.script ? 'script:'+item.title : item.audio || item.url || item.title);}
+function allItems(){return ['followed','marketing'].flatMap(k=>(data[k]?.shows||[]).flatMap(show=>(show.episodes||[]).map(item=>({...item,show:show.title}))));}
+function setPage(next){page=next;save('page',page);renderPages();}
+function renderPages(){
+  if(!['discover','listen','library'].includes(page))page='listen';
+  for(const name of ['discover','listen','library']) $('#'+name+'-page').hidden=page!==name;
+  document.querySelectorAll('[data-page]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.page===page)));
+  if(page==='library')renderLibrary();
+  if(page==='discover'&&lastSearch)renderSearch(lastSearch);
+  const last=read('last',null);$('#resume-box').hidden=!last;
+  if(last)$('#resume-episode').textContent='继续收听 · '+last.title;
+}
+function renderSearch(q){
+  lastSearch=q;
+  const host=$('#discover-results');host.replaceChildren();
+  const terms=q.toLowerCase().trim().split(/\s+/).filter(Boolean);
+  const unique=new Map();
+  for(const item of allItems())if(terms.every(t=>[item.title,item.summary,item.script,item.show].filter(Boolean).join(' ').toLowerCase().includes(t)))unique.set(stableId(item),item);
+  for(const [id,item] of [...unique].slice(0,10)){
+    const row=el('article');row.className='result-row';const body=el('div');body.append(el('strong',item.title),el('p',item.show+' · '+(item.kind==='audio'?'音频':'文稿或导语')));row.append(body);
+    const b=el('button',added[id]?'已添加':'＋ 添加');b.className='utility';b.disabled=!!added[id];b.onclick=()=>{added[id]=item;save('added-v3',added);renderSearch(q);render();};row.append(b);host.append(row);
+  }
+  if(!unique.size)host.append(el('p','当前节目库没有匹配项。外部 Agent 搜索尚未接入。'));
+}
+function renderLibrary(){
+  const host=$('#library-list');host.replaceChildren();
+  for(const [id,item] of Object.entries(favorites)){
+    const wrap=el('div');wrap.className='library-row';const check=el('input');check.type='checkbox';check.checked=selected.has(id);check.setAttribute('aria-label','选择 '+item.title);check.onchange=()=>{check.checked?selected.add(id):selected.delete(id);};wrap.append(check,card({title:item.show||'收藏'},item,0));host.append(wrap);
+  }
+  if(!Object.keys(favorites).length)host.append(el('p','点击节目旁的爱心即可收藏。'));
+}
+document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>setPage(b.dataset.page));
+$('#discover-form').onsubmit=e=>{e.preventDefault();renderSearch($('#discover-query').value.trim());};
+$('#resume-episode').onclick=()=>{const item=read('last',null);if(item)play(item);};
+$('#export-synthesis').onclick=()=>{
+  const items=[...selected].map(id=>favorites[id]).filter(Boolean);
+  if(items.length<2){alert('至少选择两份资料');return;}
+  const prompt='请整合以下资料，比较共同观点、差异与证据，并提炼方法论。没有全文的资料请注明证据不足，不要编造。\n\n'+items.map(x=>JSON.stringify({title:x.title,source:x.show,url:x.url||x.audio,summary:x.summary,script:x.script,sources:x.sources},null,2)).join('\n\n');
+  saveBlob(new Blob([prompt],{type:'text/plain;charset=utf-8'}),'shengjian-synthesis.txt');
+  note('已导出整合请求；可交给 GPT 或 Grok。尚未连接后台。');
+};
 let custom = read('feeds', []);
 let category = read('category', 'followed');
 let showKey = read('showKey', {});
@@ -62,7 +109,11 @@ function fallbackDownload(url, filename) {
   link.click();
   link.remove();
 }
-function setPlayer(mode) { document.body.dataset.player = mode; }
+function setPlayer(mode) { document.body.dataset.player = mode;syncMini(); }
+function syncMini(){const b=$('#mini-toggle');if(!b)return;const speech=document.body.dataset.player==='speech';const playing=speech?!!window.speechSynthesis&&!window.speechSynthesis.paused:!audio.paused;b.textContent=playing?'Ⅱ':'▶';b.setAttribute('aria-label',playing?'暂停':'播放');}
+$('#mini-toggle').onclick=()=>{if(document.body.dataset.player==='speech'){if(window.speechSynthesis.paused)window.speechSynthesis.resume();else window.speechSynthesis.pause();}else if(audio.paused)audio.play().catch(()=>note('播放失败'));else audio.pause();syncMini();};
+$('#mini-expand').onclick=()=>{const mini=document.querySelector('footer').classList.toggle('mini');$('#mini-expand').textContent=mini?'展开播放器':'收起';$('#mini-expand').setAttribute('aria-expanded',String(!mini));};
+audio.addEventListener('play',syncMini);audio.addEventListener('pause',syncMini);
 function stopSpeech() {
   activeSpeech = null;
   utterance = null;
@@ -91,7 +142,7 @@ function playAudio(item) {
   $('#now').textContent = item.title;
   $('#mode').textContent = item.show ? item.show + ' · 音频' : '音频';
   setPlayer('audio');
-  save('last', { kind: 'audio', title: item.title, audio: item.audio, show: item.show || '' });
+  save('last', item);
   markPlaying(item);
   audio.onloadedmetadata = () => {
     audio.currentTime = Math.min(progress[item.audio] || 0, Math.max(0, (audio.duration || Infinity) - 1));
@@ -127,9 +178,10 @@ function playSpeech(item) {
   $('#now').textContent = item.title;
   $('#mode').textContent = item.script ? '正在朗读完整原创文稿' : '正在用系统语音朗读短导语';
   setPlayer('speech');
-  save('last', { kind: 'speech', title: item.title, summary: item.summary || '', script: item.script || '', url: item.url, source: item.source || '', show: item.show || '' });
+  save('last', item);
   markPlaying(item);
   next();
+  syncMini();
   setTimeout(() => { if (window.speechSynthesis.paused) window.speechSynthesis.resume(); }, 200);
   note(item.script ? '原创节目：系统语音朗读完整文稿。' : '仅朗读公开来源导语；全文请打开原文。');
 }
@@ -140,7 +192,7 @@ function play(item) {
 function markPlaying(item) {
   document.querySelectorAll('.card').forEach(card => card.classList.remove('is-playing'));
   if (!item) return;
-  const card = document.querySelector('[data-key="' + CSS.escape(item.key) + '"]');
+  const card = document.querySelector('[data-key="' + CSS.escape(item.key || '') + '"]');
   if (card) card.classList.add('is-playing');
 }
 
@@ -250,12 +302,14 @@ function card(show, item, index) {
   download.className = 'download';
   download.setAttribute('aria-label', '下载 ' + item.title);
   download.onclick = () => (item.kind === 'speech' ? downloadSpeech(payload) : downloadAudio(payload, download));
-  actions.append(playButton, download);
+  const id=stableId(payload);const heart=el('button',favorites[id]?'♥':'♡');heart.className='favorite';heart.type='button';heart.setAttribute('aria-label','收藏 '+item.title);heart.setAttribute('aria-pressed',String(!!favorites[id]));heart.onclick=()=>{if(favorites[id]){delete favorites[id];selected.delete(id);}else favorites[id]=payload;save('favorites-v3',favorites);render();};actions.append(playButton, download, heart);
   row.append(main, actions);
   return row;
 }
 
 function group(name) {
+  if(name==='followed')return {shows:[...(data.followed?.shows||[]),...(data.marketing?.shows||[]).filter(s=>!s.url?.endsWith('#originals'))]};
+  if(name==='marketing')return {shows:[...(data.marketing?.shows||[]).filter(s=>s.url?.endsWith('#originals')),...(Object.keys(added).length?[{title:'我的添加',url:'https://oliver22yang-beep.github.io/poadcast/#added',episodes:Object.values(added)}]:[])]};
   return data[name] || { shows: [] };
 }
 function selectedShow(name) {
@@ -319,6 +373,7 @@ function render() {
   const audioN = marketingShows.filter(show => show.kind === 'audio').length;
   const speechN = marketingShows.filter(show => show.kind === 'speech').length;
   $('#tab-marketing .cat-sub').textContent = audioN + ' 个音频 · ' + speechN + ' 个朗读';
+  renderPages();
 }
 function selectCategory(next) {
   category = next;
