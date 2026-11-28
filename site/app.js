@@ -150,6 +150,7 @@ audio.ontimeupdate = () => {
     save('progress', progress);
   }
 };
+audio.onended = () => { setPlayer('idle'); markPlaying(null); };
 audio.onerror = () => { if (document.body.dataset.player === 'audio') note('音频暂时无法加载，请稍后重试。'); };
 $('#back').onclick = () => { audio.currentTime = Math.max(0, audio.currentTime - 15); };
 $('#forward').onclick = () => { audio.currentTime = Math.min(audio.duration || Infinity, audio.currentTime + 30); };
@@ -236,13 +237,15 @@ function card(show, item, index) {
   main.append(mark, text);
   const actions = document.createElement('div');
   actions.className = 'actions';
-  const playButton = el('button', '播放');
+  const playButton = el('button', '▶');
+  playButton.title = '播放';
   playButton.type = 'button';
   playButton.className = 'play';
   const payload = { ...item, show: show.title, key };
   playButton.setAttribute('aria-label', (item.kind === 'speech' ? (item.script ? '朗读原创节目 ' : '朗读短导语 ') : '播放 ') + item.title);
   playButton.onclick = () => play(payload);
-  const download = el('button', '下载');
+  const download = el('button', '↓');
+  download.title = '下载';
   download.type = 'button';
   download.className = 'download';
   download.setAttribute('aria-label', '下载 ' + item.title);

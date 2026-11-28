@@ -10,8 +10,7 @@
 <title>声间</title>
 <body data-player="idle">
 <header class="top">
-  <p class="brand">声间</p>
-  <h1>先选一类，再按播放。</h1>
+  <div><p class="brand">SHENGJIAN · PODCASTS</p><h1>声间</h1></div><span class="header-label">随时收听</span>
 </header>
 <div class="picker" role="tablist" aria-label="分类">
   <button id="tab-followed" type="button" role="tab" aria-selected="true" aria-controls="panel-followed">
@@ -30,15 +29,15 @@
 <p id="status" role="status">正在读取节目…</p>
 <section id="panel-followed" role="tabpanel" aria-labelledby="tab-followed">
   <p class="note" id="followed-note"></p>
-  <form id="subscribe">
+  <details class="subscription"><summary>管理 RSS 订阅</summary><form id="subscribe">
     <input id="rss" type="url" required placeholder="添加公开 RSS" aria-label="RSS 地址" inputmode="url">
     <button type="submit">订阅</button>
-  </form>
+  </form></details>
   <div id="followed-chips" class="chips" role="toolbar" aria-label="在听的节目"></div>
   <div id="followed-list" class="list"></div>
 </section>
 <section id="panel-marketing" role="tabpanel" aria-labelledby="tab-marketing" hidden>
-  <p class="note">音频直接播放。文章只朗读一句短导语，不保存、不朗读全文。</p>
+  <p class="note">原创节目支持完整文稿朗读；外部文章保留短导语及原文链接。</p>
   <div id="marketing-chips" class="chips" role="toolbar" aria-label="营销案例来源"></div>
   <div id="marketing-list" class="list"></div>
 </section>
