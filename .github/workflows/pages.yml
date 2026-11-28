@@ -23,6 +23,33 @@ jobs:
           python-version: '3.12'
       - name: Import shows and spoken marketing cases
         run: python scripts/update.py
+      - uses: actions/cache@v4
+        with:
+          path: site/audio
+          key: originals-audio-v1-${{ hashFiles('originals/*.json', 'scripts/originals.py') }}
+          restore-keys: originals-audio-v1-
+      - uses: actions/cache/restore@v4
+        with:
+          path: .tts-state
+          key: tts-ledger-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: tts-ledger-
+      - name: Install experimental Edge TTS
+        if: ${{ vars.TTS_ENGINE == 'edge' }}
+        continue-on-error: true
+        run: python -m pip install "edge-tts>=7,<8"
+      - name: Build original episodes
+        env:
+          TTS_ENGINE: ${{ vars.TTS_ENGINE || 'off' }}
+          AZURE_F0_CONFIRMED: ${{ vars.AZURE_F0_CONFIRMED }}
+          AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
+          AZURE_SPEECH_REGION: ${{ vars.AZURE_SPEECH_REGION }}
+        run: |
+          python scripts/originals.py
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: .tts-state
+          key: tts-ledger-${{ github.run_id }}-${{ github.run_attempt }}
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
