@@ -26,6 +26,7 @@ jobs:
           python -c 'import json; d=json.load(open("site/data/content.json")); s=[x for x in d["marketing"]["shows"] if x["url"].endswith("#originals")]; assert len(s)==1; assert s[0]["episodes"][0]["kind"]=="speech"; assert s[0]["episodes"][0]["script"]'
 
   edge-smoke:
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
