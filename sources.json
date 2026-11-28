@@ -35,12 +35,7 @@
       "limit": 6
     }
   ],
-  "unavailable": [
-    {
-      "name": "罗永浩的十字路口",
-      "reason": "公开 RSS 目前返回 403，暂时无法加入。"
-    }
-  ],
+  "unavailable": [],
   "summary_chars": 80,
   "exclude": [
     "央行",

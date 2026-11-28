@@ -38,7 +38,7 @@ function renderSearch(q){
     const row=el('article');row.className='result-row';const body=el('div');body.append(el('strong',item.title),el('p',item.show+' · '+(item.kind==='audio'?'音频':'文稿或导语')));row.append(body);
     const b=el('button',added[id]?'已添加':'＋ 添加');b.className='utility';b.disabled=!!added[id];b.onclick=()=>{added[id]=item;save('added-v3',added);renderSearch(q);render();};row.append(b);host.append(row);
   }
-  if(!unique.size)host.append(el('p','当前节目库没有匹配项。外部 Agent 搜索尚未接入。'));
+  if(!unique.size)host.append(el('p','节目库暂无匹配内容。'));
 }
 function renderLibrary(){
   const host=$('#library-list');host.replaceChildren();
@@ -55,7 +55,7 @@ $('#export-synthesis').onclick=()=>{
   if(items.length<2){alert('至少选择两份资料');return;}
   const prompt='请整合以下资料，比较共同观点、差异与证据，并提炼方法论。没有全文的资料请注明证据不足，不要编造。\n\n'+items.map(x=>JSON.stringify({title:x.title,source:x.show,url:x.url||x.audio,summary:x.summary,script:x.script,sources:x.sources},null,2)).join('\n\n');
   saveBlob(new Blob([prompt],{type:'text/plain;charset=utf-8'}),'shengjian-synthesis.txt');
-  note('已导出整合请求；可交给 GPT 或 Grok。尚未连接后台。');
+  note('已下载整合提示词，请手动发送给 ChatGPT 或 Grok 执行。');
 };
 let custom = read('feeds', []);
 let category = read('category', 'followed');
@@ -359,8 +359,7 @@ function render() {
   $('#tab-marketing').setAttribute('aria-selected', String(!followedOn));
   $('#panel-followed').hidden = !followedOn;
   $('#panel-marketing').hidden = followedOn;
-  const missing = (data.unavailable || []).map(item => item.name + '：' + item.reason).join('');
-  $('#followed-note').textContent = missing;
+  $('#followed-note').hidden = true;
   renderChips('followed', $('#followed-chips'));
   renderChips('marketing', $('#marketing-chips'));
   renderList('followed', $('#followed-list'));
@@ -429,7 +428,7 @@ async function init() {
     data = await (await fetch('data/content.json', { cache: 'no-store' })).json();
     data.followed = data.followed || { shows: [] };
     data.marketing = data.marketing || { shows: [] };
-    note('节目库更新于 ' + localStamp(data.updated) + (data.errors?.length ? ' · 部分来源沿用上次内容' : ''));
+    note('节目库更新于 ' + localStamp(data.updated));
   } catch {
     note('暂无内容，请运行更新脚本。');
   }
