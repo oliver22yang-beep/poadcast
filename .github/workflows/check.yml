@@ -1,0 +1,26 @@
+name: Check podcast code
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m py_compile scripts/update.py scripts/originals.py
+      - run: node --check site/app.js && node --check site/sw.js
+      - name: Offline fallback and repeat-build test
+        env:
+          TTS_ENGINE: off
+        run: |
+          python scripts/originals.py
+          python scripts/originals.py
+          python -c 'import json; d=json.load(open("site/data/content.json")); s=[x for x in d["marketing"]["shows"] if x["url"].endswith("#originals")]; assert len(s)==1; assert s[0]["episodes"][0]["kind"]=="speech"; assert s[0]["episodes"][0]["script"]'

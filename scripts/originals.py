@@ -1,4 +1,4 @@
-"""Merge public original episodes and optionally synthesize MP3 with Azure Speech."""
+"""Merge public original episodes; optional experimental Edge or confirmed Azure F0 TTS."""
 import hashlib, json, os, re, subprocess, tempfile
 from datetime import datetime, timezone
 from pathlib import Path
@@ -12,6 +12,9 @@ BASE = "https://oliver22yang-beep.github.io/poadcast/"
 KEY = os.getenv("AZURE_SPEECH_KEY", "")
 REGION = os.getenv("AZURE_SPEECH_REGION", "")
 VOICE = "zh-CN-XiaoxiaoNeural"
+ENGINE = os.getenv("TTS_ENGINE", "edge").lower()
+MAX_NEW = 3
+new_attempts = 0
 FREE_CONFIRMED = os.getenv("AZURE_F0_CONFIRMED") == "true"
 LEDGER = ROOT / ".tts-state" / (datetime.now(timezone.utc).strftime("%Y-%m") + ".json")
 LIMIT = 475000
@@ -25,7 +28,7 @@ def reserve(text):
     if used + units >= 400000: print("TTS local budget warning: 80%")
     return True
 
-def synthesize(text, target):
+def synthesize_azure(text, target):
     if target.exists() and target.stat().st_size > 0:
         return True
     if not FREE_CONFIRMED or not KEY or not re.fullmatch(r"[a-z0-9]+", REGION):
@@ -48,6 +51,27 @@ def synthesize(text, target):
         target.write_bytes(output.read_bytes())
     return True
 
+def synthesize(text, target):
+    global new_attempts
+    if target.exists() and target.stat().st_size > 0:
+        return True
+    if ENGINE not in ("edge", "azure") or new_attempts >= MAX_NEW:
+        return False
+    new_attempts += 1
+    if ENGINE == "azure":
+        return synthesize_azure(text, target)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory() as tmp:
+        output = Path(tmp) / "output.mp3"
+        input_file = Path(tmp) / "script.txt"
+        input_file.write_text(text, encoding="utf-8")
+        subprocess.run(["edge-tts", "--voice", VOICE, "--file", str(input_file), "--write-media", str(output)], check=True, timeout=180, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a:0", "-show_entries", "stream=codec_name", "-of", "csv=p=0", str(output)], check=True, capture_output=True, text=True, timeout=20)
+        if not output.stat().st_size:
+            return False
+        target.write_bytes(output.read_bytes())
+    return True
+
 def main():
     data = json.loads(OUT.read_text())
     episodes = []
@@ -58,15 +82,16 @@ def main():
         if not re.fullmatch(r"[a-z0-9-]+", ident) or ident in seen or not script or len(script) > 12000:
             raise ValueError("Invalid or duplicate original: " + path.name)
         seen.add(ident)
-        digest = hashlib.sha256((VOICE + script).encode()).hexdigest()[:20]
+        digest = hashlib.sha256((ENGINE + ":" + VOICE + ":" + script).encode()).hexdigest()[:20]
         target = AUDIO / f"{ident}-{digest}.mp3"
         ep = dict(id=ident, title=item["title"], date=item["date"], summary=item.get("summary", ""), script=script, kind="speech", source="AI 原创", url=BASE, sources=item.get("sources", []))
         try:
             if synthesize(script, target):
-                ep.update(kind="audio", audio=BASE + "audio/" + target.name, ai=True)
+                ep.update(kind="audio", audio=BASE + "audio/" + target.name, ai=True, tts_engine=ENGINE)
         except Exception as exc:
             print("TTS unavailable for", ident, type(exc).__name__)
         episodes.append(ep)
+    data["marketing"]["shows"] = [s for s in data["marketing"]["shows"] if s.get("url") != BASE+"#originals"]
     if episodes:
         data["marketing"]["shows"].insert(0, dict(title="AI 原创 · 商业案例研究室", url=BASE+"#originals", kind="speech", episodes=sorted(episodes,key=lambda x:x["date"],reverse=True)))
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2)+"\n")
